@@ -16,35 +16,23 @@
   body{
     font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;
     background:linear-gradient(160deg,var(--spider-blue-dark) 0%,var(--spider-blue) 45%,var(--spider-red-dark) 100%);
-    min-height:100vh;
-    color:#fff;
-    overflow-x:hidden;
+    min-height:100vh;color:#fff;overflow-x:hidden;
   }
-  /* クモの巣の背景飾り */
-  .web-corner{
-    position:fixed;width:240px;height:240px;opacity:.18;pointer-events:none;z-index:0;
-  }
+  .web-corner{position:fixed;width:240px;height:240px;opacity:.18;pointer-events:none;z-index:0;}
   .web-corner.tl{top:-10px;left:-10px;}
   .web-corner.br{bottom:-10px;right:-10px;transform:rotate(180deg);}
-  .container{
-    position:relative;z-index:1;
-    max-width:640px;margin:0 auto;padding:16px;
-  }
+  .container{position:relative;z-index:1;max-width:640px;margin:0 auto;padding:16px;}
   .screen{display:none;}
   .screen.active{display:block;animation:fadeIn .35s ease;}
   @keyframes fadeIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
 
-  /* タイトル */
   .site-title{
     text-align:center;margin:18px 0 6px;
     font-size:clamp(22px,6vw,34px);font-weight:900;line-height:1.3;
     text-shadow:0 3px 0 rgba(0,0,0,.45);
   }
   .site-title .small{display:block;font-size:.55em;color:#ffd54d;letter-spacing:.1em;}
-  .site-sub{
-    text-align:center;color:#ffd54d;font-weight:700;margin-bottom:14px;
-    font-size:clamp(13px,3.5vw,16px);
-  }
+  .site-sub{text-align:center;color:#ffd54d;font-weight:700;margin-bottom:14px;font-size:clamp(13px,3.5vw,16px);}
   .hero-photo{
     display:block;width:min(260px,70%);margin:10px auto;border-radius:16px;
     border:4px solid var(--web-white);box-shadow:0 8px 24px rgba(0,0,0,.5);
@@ -58,10 +46,7 @@
   .card h2{font-size:18px;color:var(--spider-blue);margin-bottom:10px;}
   .card p{font-size:14px;line-height:1.7;}
   .mode-btns{display:grid;gap:12px;margin-top:14px;}
-  button{
-    font-family:inherit;cursor:pointer;border:none;border-radius:14px;
-    transition:transform .12s ease,box-shadow .12s ease,filter .12s ease;
-  }
+  button{font-family:inherit;cursor:pointer;border:none;border-radius:14px;transition:transform .12s ease,box-shadow .12s ease,filter .12s ease;}
   button:active{transform:scale(.97);}
   .mode-btn{
     padding:16px;font-size:17px;font-weight:800;color:#fff;
@@ -71,49 +56,37 @@
   .mode-btn.main{
     font-size:20px;padding:20px;
     background:linear-gradient(135deg,var(--spider-blue),var(--spider-blue-dark));
-    box-shadow:0 5px 0 #0a1230;
-    border:2px solid #ffd54d;
+    box-shadow:0 5px 0 #0a1230;border:2px solid #ffd54d;
   }
   .mode-btn small{display:block;font-weight:600;font-size:12px;opacity:.85;margin-top:4px;}
 
-  /* クイズ画面 */
-  .hud{
-    display:flex;justify-content:space-between;align-items:center;
-    font-weight:800;margin-top:10px;font-size:14px;
-  }
+  .hud{display:flex;justify-content:space-between;align-items:center;font-weight:800;margin-top:10px;font-size:14px;}
   .hud .score{color:#ffd54d;font-size:18px;}
-  .progress-wrap{
-    background:rgba(255,255,255,.25);border-radius:999px;height:14px;margin:8px 0 4px;overflow:hidden;
-  }
-  .progress-bar{
-    height:100%;width:0%;border-radius:999px;
-    background:linear-gradient(90deg,#ffd54d,var(--spider-red));
-    transition:width .4s ease;
-  }
+  .progress-wrap{background:rgba(255,255,255,.25);border-radius:999px;height:14px;margin:8px 0 4px;overflow:hidden;}
+  .progress-bar{height:100%;width:0%;border-radius:999px;background:linear-gradient(90deg,#ffd54d,var(--spider-red));transition:width .4s ease;}
   .q-meta{font-size:12px;opacity:.85;text-align:right;}
-  .q-card{min-height:150px;}
-  .q-genre{
-    display:inline-block;background:var(--spider-blue);color:#fff;
-    font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;margin-bottom:10px;
-  }
-  .q-text{font-size:16px;line-height:1.8;font-weight:600;}
-  .q-text i{font-style:italic;font-family:Georgia,"Times New Roman",serif;padding:0 1px;}
+  .q-genre{display:inline-block;background:var(--spider-blue);color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;margin-bottom:10px;}
+  .q-text{font-size:16px;line-height:1.9;font-weight:600;}
+  .q-text i,.choice-btn i{font-style:italic;font-family:Georgia,"Times New Roman",serif;padding:0 1px;}
+
+  /* 図 */
+  .fig{display:block;width:100%;max-width:330px;height:auto;margin:12px auto 2px;background:#fff;}
+  .fig-legend{font-size:12px;color:#444;text-align:center;margin:0 0 10px;font-weight:700;line-height:1.6;}
+  .swatch{display:inline-block;width:11px;height:11px;border-radius:50%;border:1.5px solid #333;vertical-align:-1px;margin-right:3px;}
+
   .choices{display:grid;gap:10px;margin-top:6px;}
   .choice-btn{
     padding:14px 16px;font-size:16px;font-weight:700;text-align:left;
     background:#fff;color:var(--spider-blue-dark);
-    border:2.5px solid var(--spider-blue);border-radius:12px;
+    border:2.5px solid var(--spider-blue);border-radius:12px;line-height:1.6;
   }
-  .choice-btn i{font-style:italic;font-family:Georgia,serif;}
   .choice-btn:hover{filter:brightness(1.05);box-shadow:0 3px 10px rgba(0,0,0,.3);}
   .choice-btn.correct{background:#1fa74a;border-color:#0d7c32;color:#fff;}
   .choice-btn.wrong{background:var(--spider-red);border-color:var(--spider-red-dark);color:#fff;animation:shake .4s;}
   .choice-btn:disabled{cursor:default;}
   @keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
 
-  .feedback{
-    margin:12px 0 0;padding:12px 14px;border-radius:12px;font-size:14px;line-height:1.7;display:none;
-  }
+  .feedback{margin:12px 0 0;padding:12px 14px;border-radius:12px;font-size:14px;line-height:1.8;display:none;}
   .feedback.show{display:block;animation:fadeIn .3s;}
   .feedback.good{background:#e3f7e9;color:#0d5c28;border:2px solid #1fa74a;}
   .feedback.bad{background:#fdeaea;color:#8c1017;border:2px solid var(--spider-red);}
@@ -124,55 +97,36 @@
   }
   .next-btn.show{display:block;}
 
-  /* 結果画面 */
   .result-score{
     text-align:center;font-size:clamp(60px,20vw,110px);font-weight:900;color:#ff2d3a;
-    text-shadow:0 4px 0 rgba(0,0,0,.35), 0 0 30px rgba(255,213,77,.6);
-    margin:8px 0;
+    text-shadow:0 4px 0 rgba(0,0,0,.35), 0 0 30px rgba(255,213,77,.6);margin:8px 0;
   }
   .result-score span{font-size:.35em;color:#fff;}
   .result-msg{text-align:center;font-size:20px;font-weight:800;color:#ffd54d;margin-bottom:10px;}
   .stats{display:flex;gap:10px;justify-content:center;margin:12px 0;flex-wrap:wrap;}
-  .stat{
-    background:rgba(255,255,255,.95);color:var(--spider-blue-dark);
-    border-radius:12px;padding:10px 16px;text-align:center;min-width:110px;
-  }
+  .stat{background:rgba(255,255,255,.95);color:var(--spider-blue-dark);border-radius:12px;padding:10px 16px;text-align:center;min-width:110px;}
   .stat b{display:block;font-size:22px;color:var(--spider-red);}
   .stat span{font-size:12px;font-weight:700;}
 
-  /* ウェブシューター演出 */
   #webLayer{position:fixed;inset:0;pointer-events:none;z-index:50;}
   .web-line{
     position:absolute;height:4px;border-radius:4px;
     background:linear-gradient(90deg,rgba(255,255,255,.95),rgba(255,255,255,.35));
-    transform-origin:left center;
-    animation:shoot .5s ease-out forwards;
+    transform-origin:left center;animation:shoot .5s ease-out forwards;
   }
   @keyframes shoot{from{transform:scaleX(0) rotate(var(--ang));}to{transform:scaleX(1) rotate(var(--ang));}}
-  .web-burst{
-    position:absolute;font-size:34px;transform:translate(-50%,-50%) scale(0);
-    animation:burst .6s .3s ease-out forwards;
-  }
+  .web-burst{position:absolute;font-size:34px;transform:translate(-50%,-50%) scale(0);animation:burst .6s .3s ease-out forwards;}
   @keyframes burst{to{transform:translate(-50%,-50%) scale(1.15);}}
-  .spider-pop{
-    position:fixed;font-size:30px;z-index:60;pointer-events:none;
-    animation:popUp .8s ease-out forwards;
-  }
-  @keyframes popUp{
-    0%{transform:translateY(0) scale(.4);opacity:0;}
-    30%{opacity:1;}
-    100%{transform:translateY(-90px) scale(1.2);opacity:0;}
-  }
+  .spider-pop{position:fixed;font-size:30px;z-index:60;pointer-events:none;animation:popUp .8s ease-out forwards;}
+  @keyframes popUp{0%{transform:translateY(0) scale(.4);opacity:0;}30%{opacity:1;}100%{transform:translateY(-90px) scale(1.2);opacity:0;}}
   .footer-note{text-align:center;font-size:11px;opacity:.7;margin:20px 0 8px;}
 
-  /* 100点のごほうび */
   .prize-box{text-align:center;}
   .prize-label{
     display:inline-block;background:#ffd54d;color:#8c1017;
     font-weight:900;font-size:clamp(15px,4.5vw,20px);
     padding:10px 18px;border-radius:999px;margin:6px 0 4px;
-    box-shadow:0 4px 14px rgba(0,0,0,.4);
-    animation:prizePulse 1.2s ease-in-out infinite;
+    box-shadow:0 4px 14px rgba(0,0,0,.4);animation:prizePulse 1.2s ease-in-out infinite;
   }
   @keyframes prizePulse{0%,100%{transform:scale(1);}50%{transform:scale(1.06);}}
   .prize-img{
@@ -181,10 +135,7 @@
     box-shadow:0 0 34px rgba(255,213,77,.85),0 10px 26px rgba(0,0,0,.5);
     animation:prizeIn .9s cubic-bezier(.2,1.6,.4,1) both;
   }
-  @keyframes prizeIn{
-    0%{transform:scale(0) rotate(-15deg);opacity:0;}
-    100%{transform:scale(1) rotate(0);opacity:1;}
-  }
+  @keyframes prizeIn{0%{transform:scale(0) rotate(-15deg);opacity:0;}100%{transform:scale(1) rotate(0);opacity:1;}}
 </style>
 </head>
 <body>
@@ -210,11 +161,12 @@
     <div class="card">
       <h2>📚 出題範囲（中1・3章 文字と式）</h2>
       <p>
-        ・文字を使った式で数量を表す（等式・不等式）<br>
+        ・文字を使った式で数量を表す（等式）<br>
+        ・大小関係を不等号で表す（＜ ≦ ＞ ≧）<br>
         ・碁石の並べ方と式（トーマス・ヘンリー・ゴードン・パーシー）<br>
         ・マッチ棒の規則性（正三角形・正方形）<br>
-        ・式が表す意味を読み取る問題<br><br>
-        <b style="color:var(--spider-red);">間違えた問題は、あとでもう一度出題されるぞ！</b><br>
+        ・式が表す意味を読み取る<br><br>
+        <b style="color:var(--spider-red);">まちがえた問題は、あとでもう一度出題されるぞ！</b><br>
         全部正解するまで終わらない。それがヒーローの修行だ。
       </p>
       <div class="mode-btns">
@@ -223,20 +175,21 @@
         <button class="mode-btn" onclick="startQuiz(10)">10問 ウォーミングアップ</button>
       </div>
     </div>
-    <p class="footer-note">札幌市立福井野中学校・夏休み明けテスト対策 ／ 出題パターンは毎回変わるよ</p>
+    <p class="footer-note">札幌市立福井野中学校・夏休み明けテスト対策 ／ 問題は毎回ランダムに作られます</p>
   </div>
 
   <!-- クイズ画面 -->
   <div class="screen" id="quizScreen">
     <div class="hud">
       <div>🕷️ <span id="modeLabel"></span></div>
-      <div class="score"><span id="scoreNow">0</span>点 / <span id="scoreMax">100</span>点</div>
+      <div class="score">クリア <span id="scoreNow">0</span> / <span id="scoreMax">100</span></div>
     </div>
     <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
-    <div class="q-meta">残り <span id="remainCount">0</span> 問（間違えた分もふくむ）</div>
-    <div class="card q-card">
+    <div class="q-meta">のこり <span id="remainCount">0</span> 問（まちがえた分もふくむ）</div>
+    <div class="card">
       <span class="q-genre" id="qGenre"></span>
       <p class="q-text" id="qText"></p>
+      <div id="qFig"></div>
     </div>
     <div class="choices" id="choices"></div>
     <div class="feedback" id="feedback"></div>
@@ -254,8 +207,8 @@
       <img src="machi.jpg" alt="最強マッチ" class="hero-photo" onerror="this.style.display='none'">
     </div>
     <div class="stats">
-      <div class="stat"><b id="statFirst">0</b><span>初見で正解</span></div>
-      <div class="stat"><b id="statMiss">0</b><span>ミスした回数</span></div>
+      <div class="stat"><b id="statFirst">0</b><span>一発で正解</span></div>
+      <div class="stat"><b id="statMiss">0</b><span>まちがえた回数</span></div>
       <div class="stat"><b id="statBest">-</b><span>今までの最少ミス</span></div>
     </div>
     <div class="mode-btns">
@@ -272,180 +225,303 @@
 const ri=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
 const pick=a=>a[ri(0,a.length-1)];
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=ri(0,i);[a[i],a[j]]=[a[j],a[i]];}return a;}
-const it=s=>String(s).replace(/([a-z])/g,"<i>$1</i>"); // 変数を斜体に
+const it=s=>String(s).replace(/([a-z])/g,"<i>$1</i>");   /* 文字を斜体に */
 
-/* 選択肢セット生成（正解＋誤答、重複除去） */
+/* 4択をつくる（正解と同じ選択肢が2つ出ないように必ず重複を取りのぞく） */
 function mc(correct,wrongs){
-  const set=[correct,...wrongs.filter(w=>w!==correct)];
-  const uniq=[...new Set(set)].slice(0,4);
-  while(uniq.length<4) uniq.push(correct+" ");
-  const arr=shuffle([...uniq]);
+  const uniq=[];
+  wrongs.forEach(w=>{ if(w!==correct && uniq.indexOf(w)<0) uniq.push(w); });
+  const arr=shuffle([correct,...uniq.slice(0,3)]);
   return {choices:arr,ans:arr.indexOf(correct)};
 }
 
-/* ============ 問題ジェネレーター（20種類） ============ */
+/* ============ 図をかく ============ */
+const C_RED="#e03a3a",C_BLUE="#2f5fd0",C_PUR="#8e44ad";
+const sw=c=>`<span class="swatch" style="background:${c}"></span>`;
+const legend=(...t)=>`<p class="fig-legend">${t.join("<br>")}</p>`;
+
+/* 碁石：たてm個・横x個の長方形の「まわりだけ」 */
+function goishi(m,mode){
+  const S=23,PAD=15,COLS=7,GAP=3,R=8.5;
+  const lastR=m-1,lastC=COLS-1;
+  const W=PAD*2+lastC*S,H=PAD*2+lastR*S;
+  let o=`<svg class="fig" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">`;
+  for(let r=0;r<m;r++)for(let c=0;c<COLS;c++){
+    if(!(r===0||r===lastR||c===0||c===lastC)) continue;
+    const cx=PAD+c*S,cy=PAD+r*S;
+    if(c===GAP){ o+=`<text x="${cx}" y="${cy+5}" text-anchor="middle" font-size="15" font-weight="700" fill="#555">…</text>`; continue; }
+    let f="#fff";
+    if(mode==="thomas")      f=(r===0||r===lastR)?C_RED:C_BLUE;
+    else if(mode==="henry")  f=(c===0||c===lastC)?C_BLUE:C_RED;
+    else if(mode==="gordon") f=((r===0||r===lastR)&&(c===0||c===lastC))?C_PUR:((r===0||r===lastR)?C_RED:C_BLUE);
+    else if(mode==="percy"){
+      if(r===0&&c<lastC)          f=C_RED;
+      else if(c===lastC&&r<lastR) f=C_BLUE;
+      else if(r===lastR&&c>0)     f=C_RED;
+      else                        f=C_BLUE;
+    }
+    o+=`<circle cx="${cx}" cy="${cy}" r="${R}" fill="${f}" stroke="#333" stroke-width="1.5"/>`;
+  }
+  return o+`</svg>`;
+}
+
+/* マッチ棒：正三角形を横一列に */
+const FIG_TRI=`<svg class="fig" viewBox="0 0 248 72" xmlns="http://www.w3.org/2000/svg">
+<g stroke="#8B4513" stroke-width="5" stroke-linecap="round">
+<line x1="12" y1="58" x2="34" y2="14"/><line x1="34" y1="14" x2="56" y2="58"/>
+<line x1="56" y1="58" x2="78" y2="14"/><line x1="78" y1="14" x2="100" y2="58"/>
+<line x1="100" y1="58" x2="122" y2="14"/><line x1="122" y1="14" x2="144" y2="58"/>
+<line x1="12" y1="58" x2="56" y2="58"/><line x1="56" y1="58" x2="100" y2="58"/><line x1="100" y1="58" x2="144" y2="58"/>
+<line x1="34" y1="14" x2="78" y2="14"/><line x1="78" y1="14" x2="122" y2="14"/>
+</g>
+<text x="166" y="42" text-anchor="middle" font-size="17" font-weight="700" fill="#555">・・・</text>
+<g stroke="#8B4513" stroke-width="5" stroke-linecap="round">
+<line x1="192" y1="14" x2="236" y2="14"/><line x1="192" y1="14" x2="214" y2="58"/><line x1="236" y1="14" x2="214" y2="58"/>
+</g></svg>`;
+
+/* マッチ棒：正方形を横一列に */
+const FIG_SQ=`<svg class="fig" viewBox="0 0 258 68" xmlns="http://www.w3.org/2000/svg">
+<g stroke="#8B4513" stroke-width="5" stroke-linecap="round">
+<line x1="12" y1="14" x2="52" y2="14"/><line x1="52" y1="14" x2="92" y2="14"/><line x1="92" y1="14" x2="132" y2="14"/><line x1="132" y1="14" x2="172" y2="14"/>
+<line x1="12" y1="54" x2="52" y2="54"/><line x1="52" y1="54" x2="92" y2="54"/><line x1="92" y1="54" x2="132" y2="54"/><line x1="132" y1="54" x2="172" y2="54"/>
+<line x1="12" y1="14" x2="12" y2="54"/><line x1="52" y1="14" x2="52" y2="54"/>
+<line x1="92" y1="14" x2="92" y2="54"/><line x1="132" y1="14" x2="132" y2="54"/><line x1="172" y1="14" x2="172" y2="54"/>
+</g>
+<text x="190" y="38" text-anchor="middle" font-size="17" font-weight="700" fill="#555">・・・</text>
+<g stroke="#8B4513" stroke-width="5" stroke-linecap="round">
+<line x1="208" y1="14" x2="248" y2="14"/><line x1="208" y1="54" x2="248" y2="54"/>
+<line x1="208" y1="14" x2="208" y2="54"/><line x1="248" y1="14" x2="248" y2="54"/>
+</g></svg>`;
+
+const TRI_LEG=legend("マッチ棒を1本ずつたして、正三角形を横一列にふやしていく");
+const SQ_LEG =legend("マッチ棒を1本ずつたして、正方形を横一列にふやしていく");
+
+/* ============ 問題ジェネレーター ============ */
 const GEN=[
 
-// 1) 道のりの等式  x+y=d
-()=>{ const d=ri(2,9); const place=pick(["公園","駅","図書館","体育館","おばあちゃんの家"]);
-  const c=mc(`x＋y＝${d}`,[`x−y＝${d}`,`x＋y＜${d}`,`${d}x＝y`]);
-  return {g:"文字式で表す",q:`家から ${it("x")}km 走り、途中から ${it("y")}km 歩くと、${d}km 離れた${place}に着いた。この関係を式で表すと？`,
-  ...c, e:`走った道のり＋歩いた道のり＝全体の道のり なので x＋y＝${d}`};},
+/* --- 1. 道のりの合計（等式） --- */
+()=>{ const d=ri(3,9),place=pick(["公園","駅","図書館","体育館","おばあちゃんの家"]);
+  return {g:"文字式で表す",
+    q:`家から ${it("x")}km 走り、そのあと ${it("y")}km 歩いたら、家から ${d}km はなれた${place}に着いた。この関係を式で表すと？`,
+    ...mc(`x＋y＝${d}`,[`x−y＝${d}`,`x＋y＜${d}`,`x×y＝${d}`]),
+    e:`走った道のり ＋ 歩いた道のり ＝ 全体の道のり だから、x＋y＝${d}`};},
 
-// 2) 買い物のおつり  ax+by<c
-()=>{ const a=pick([60,80,90,120]),b=pick([100,110,120,150]),cst=pick([1000,2000]);
-  const c=mc(`${a}x＋${b}y＜${cst}`,[`${a}x＋${b}y＞${cst}`,`${a}x＋${b}y＝${cst}`,`${a}x＋${b}y≦${cst}`]);
-  return {g:"不等式で表す",q:`1個 ${a}円のパンを ${it("x")}個と、1本 ${b}円の飲み物を ${it("y")}本買って ${cst}円出したら、<b>おつりがあった</b>。この関係を式で表すと？`,
-  ...c, e:`おつりが「あった」＝代金は ${cst}円より安い。だから ＜（イコールは付かない）`};},
+/* --- 2. おつりがあった（不等式） --- */
+()=>{ const a=pick([60,80,90,120]),b=pick([100,110,130,150]),t=pick([1000,2000]);
+  return {g:"不等式で表す",
+    q:`1個 ${a}円のパンを ${it("x")}個と、1本 ${b}円の飲み物を ${it("y")}本 買って ${t}円出したら、<b>おつりがあった</b>。この関係を式で表すと？`,
+    ...mc(`${a}x＋${b}y＜${t}`,[`${a}x＋${b}y＞${t}`,`${a}x＋${b}y＝${t}`,`${a}x＋${b}y≦${t}`]),
+    e:`おつりが「あった」＝代金は ${t}円より安い。ぴったりの場合はふくまないので ≦ ではなく ＜ を使う。`};},
 
-// 3) 浴槽の給水  V−tx＝r
-()=>{ const V=pick([200,300]),t=pick([5,6,8]); const r=V-t*ri(3,Math.floor(V/t/2));
-  const c=mc(`${V}−${t}x＝${r}`,[`${V}＋${t}x＝${r}`,`${t}x−${V}＝${r}`,`${V}−${t}x＜${r}`]);
-  return {g:"文字式で表す",q:`${V}L 入る浴槽に毎分 ${it("x")}L ずつ給水する。${t}分間入れたとき、あと ${r}L 入れることができる。この関係を式で表すと？`,
-  ...c, e:`全体 − 入れた分（${t}x）＝ 残り なので ${V}−${t}x＝${r}`};},
+/* --- 3. 浴槽の給水（等式） --- */
+()=>{ const V=pick([200,300]),t=pick([5,6,8]),k=ri(4,12),r=V-t*k;
+  return {g:"文字式で表す",
+    q:`${V}L 入るお風呂に、毎分 ${it("x")}L ずつ水を入れる。${t}分間入れたところ、<b>あと ${r}L</b> 入れられる状態だった。この関係を式で表すと？`,
+    ...mc(`${V}−${t}x＝${r}`,[`${V}＋${t}x＝${r}`,`${t}x−${V}＝${r}`,`${V}−${t}x＜${r}`]),
+    e:`入れた水は ${t}x L。全体 ${V}L からそれをひくと、のこり ${r}L。だから ${V}−${t}x＝${r}`};},
 
-// 4) ％減の不等式  (1-p/100)x ≦ y
-()=>{ const p=pick([10,20,30]); const k=(1-p/100).toFixed(1).replace("0.","0.");
-  const c=mc(`${k}x≦y`,[`${k}x≧y`,`${k}x＜y`,`${(1+p/100).toFixed(1)}x≦y`]);
-  return {g:"不等式で表す",q:`昨年の生徒数は ${it("x")}人だったが、今年は昨年より ${p}％減ったので、${it("y")}人<b>以下</b>になった。この関係を式で表すと？`,
-  ...c, e:`${p}％減 → ×(1−${p/100})＝×${k}。「以下」だから ≦`};},
+/* --- 4. ％減って「以下」（不等式） --- */
+()=>{ const p=pick([10,20,30]),k=(1-p/100).toFixed(1);
+  return {g:"不等式で表す",
+    q:`ある小学校の昨年の生徒数は ${it("x")}人だった。今年は昨年より ${p}％ 減ったので、生徒数は ${it("y")}人 <b>以下</b>になった。この関係を式で表すと？`,
+    ...mc(`${k}x≦y`,[`${k}x≧y`,`${k}x＜y`,`${(1+p/100).toFixed(1)}x≦y`]),
+    e:`${p}％減る → のこりは (100−${p})％＝${k} 倍なので ${k}x 人。「以下」はぴったりもふくむので ≦`};},
 
-// 5) ％増の不等式  (1+p/100)x ≧ y
-()=>{ const p=pick([10,20,30]); const k=(1+p/100).toFixed(1);
-  const c=mc(`${k}x≧y`,[`${k}x≦y`,`${(1-p/100).toFixed(1)}x≧y`,`${k}x＞y`]);
-  return {g:"不等式で表す",q:`先月の来場者は ${it("x")}人だったが、今月は先月より ${p}％増えて ${it("y")}人<b>以上</b>になった。この関係を式で表すと？`,
-  ...c, e:`${p}％増 → ×(1＋${p/100})＝×${k}。「以上」だから ≧`};},
+/* --- 5. ％増えて「以上」（不等式） --- */
+()=>{ const p=pick([10,20,30]),k=(1+p/100).toFixed(1);
+  return {g:"不等式で表す",
+    q:`先月のイベント来場者は ${it("x")}人だった。今月は先月より ${p}％ 増えて、${it("y")}人 <b>以上</b>になった。この関係を式で表すと？`,
+    ...mc(`${k}x≧y`,[`${k}x≦y`,`${(1-p/100).toFixed(1)}x≧y`,`${k}x＞y`]),
+    e:`${p}％増える → (100＋${p})％＝${k} 倍なので ${k}x 人。「以上」はぴったりもふくむので ≧`};},
 
-// 6) a倍ひくbと大小
+/* --- 6. ○倍から△をひく（不等号の使い分け） --- */
 ()=>{ const a=pick([3,5,8,15]),b=ri(2,9),cv=ri(20,50);
-  const w=pick([["未満","＜"],["以下","≦"],["より大きい","＞"],["以上","≧"]]);
-  const sym=w[1];
-  const wrongSyms=["＜","≦","＞","≧"].filter(s=>s!==sym);
-  const c=mc(`${a}x−${b}${sym}${cv}`,[`${a}x−${b}${wrongSyms[0]}${cv}`,`${a}x−${b}${wrongSyms[1]}${cv}`,`${a}x＋${b}${sym}${cv}`]);
-  return {g:"不等式で表す",q:`ある数 ${it("x")} の ${a}倍から ${b} をひいてできる数は ${cv} <b>${w[0]}</b>である。この関係を式で表すと？`,
-  ...c, e:`「${w[0]}」は記号 ${sym} を使う（未満・より大きい はイコールなし、以上・以下 はイコールあり）`};},
+  const w=pick([["未満である","＜","未満"],["以下である","≦","以下"],["より大きい","＞","より大きい"],["以上である","≧","以上"]]);
+  const s=w[1],others=["＜","≦","＞","≧"].filter(x=>x!==s);
+  return {g:"不等式で表す",
+    q:`ある数 ${it("x")} の ${a}倍から ${b} をひいてできる数は、${cv} <b>${w[0]}</b>。この関係を式で表すと？`,
+    ...mc(`${a}x−${b}${s}${cv}`,[`${a}x−${b}${others[0]}${cv}`,`${a}x−${b}${others[1]}${cv}`,`${a}x＋${b}${s}${cv}`]),
+    e:`「${w[2]}」は ${s} を使う。〈未満・より大きい＝イコールなし／以上・以下＝イコールあり〉`};},
 
-// 7) a倍たすbの等式
+/* --- 7. ある数を○倍して△をたす（等式） --- */
 ()=>{ const a=ri(2,9),b=ri(2,9);
-  const c=mc(`${a}x＋${b}＝y`,[`${a}x−${b}＝y`,`${a}(x＋${b})＝y`,`x＋${a+b}＝y`]);
-  return {g:"文字式で表す",q:`ある数 ${it("x")} を ${a}倍して ${b} をたすと ${it("y")} になった。この関係を式で表すと？`,
-  ...c, e:`x の ${a}倍 → ${a}x、それに ${b} をたして y と等しい`};},
+  return {g:"文字式で表す",
+    q:`ある数 ${it("x")} を ${a}倍して ${b} をたすと、${it("y")} になった。この関係を式で表すと？`,
+    ...mc(`${a}x＋${b}＝y`,[`${a}x−${b}＝y`,`${a}(x＋${b})＝y`,`x＋${a+b}＝y`]),
+    e:`「${a}倍して」→ ${a}x、「${b}をたす」→ ＋${b}。それが y と等しい。`};},
 
-// 8) 速さの合計
-()=>{ const walk=Math.random()<0.5;
-  const a=walk?pick([3,4,5]):pick([60,70,80]), b=walk?pick([6,8,10]):pick([100,120,150]), d=walk?ri(10,40):ri(500,2000);
-  const unit=walk?"時速":"分速", tunit=walk?"時間":"分", dunit=walk?"km":"m";
-  const c=mc(`${a}x＋${b}y＝${d}`,[`${a}x−${b}y＝${d}`,`${a}x＋${b}y＜${d}`,`(${a}＋${b})xy＝${d}`]);
-  return {g:"文字式で表す",q:`${unit}${a}${dunit}で ${it("x")}${tunit}進み、そのあと${unit}${b}${dunit}で ${it("y")}${tunit}進んだら、合計 ${d}${dunit} 進んだ。この関係を式で表すと？`,
-  ...c, e:`道のり＝速さ×時間。${a}x＋${b}y が合計の道のり`};},
+/* --- 8. 速さと道のり（等式） --- */
+()=>{ const a=pick([50,60,70,80]),b=pick([120,150,180,200]),d=pick([800,1000,1200,1500,2000]);
+  return {g:"文字式で表す",
+    q:`分速 ${a}m で ${it("x")}分間 歩き、そのあと 分速 ${b}m で ${it("y")}分間 走ったら、合計 ${d}m 進んだ。この関係を式で表すと？`,
+    ...mc(`${a}x＋${b}y＝${d}`,[`${a}x−${b}y＝${d}`,`${a}x＋${b}y＜${d}`,`(${a}＋${b})xy＝${d}`]),
+    e:`道のり＝速さ×時間。歩いた道のり ${a}x m ＋ 走った道のり ${b}y m ＝ ${d}m`};},
 
-// 9) 碁石・トーマス式（上下の列＋左右の残り）
-()=>{ const m=pick([4,5,6,7]);
-  const c=mc(`${m-2}`,[`${m}`,`${m-1}`,`${m+1}`]);
-  return {g:"碁石の問題",q:`碁石を縦 ${m}個、横 ${it("x")}個の長方形に並べる。トーマスは「横の列 ${it("x")}個を上下2列と、縦の残りを左右2列」と考えて、まわりの碁石の数を <b>${it("x")}×2＋□×2</b> と表した。□にあてはまる数は？`,
-  ...c, e:`縦${m}個のうち、上下のはしの2個はもう数えたので ${m}−2＝${m-2}個`};},
+/* --- 9. 代金＋箱代 --- */
+()=>{ const a=pick([80,100,120,150]),b=pick([50,100,200]),f=pick(["りんご","みかん","もも","ドーナツ","シュークリーム"]);
+  return {g:"文字式で表す",
+    q:`1個 ${a}円の${f}を ${it("x")}個 買い、${b}円の箱に入れてもらった。代金の合計は何円？`,
+    ...mc(`(${a}x＋${b})円`,[`(${a}x−${b})円`,`${a+b}x円`,`(${a}＋${b}x)円`]),
+    e:`${f}代は ${a}×x＝${a}x 円。それに箱代 ${b}円をたす。`};},
 
-// 10) 碁石・ヘンリー式（縦の列フル＋横の残り）
-()=>{ const m=pick([4,5,6,7]);
-  const c=mc(`x−2`,[`x−1`,`x`,`x＋2`]);
-  return {g:"碁石の問題",q:`碁石を縦 ${m}個、横 ${it("x")}個の長方形に並べる。ヘンリーは「縦の列 ${m}個を左右2列と、横の残りを上下2列」と考えて、まわりの碁石の数を <b>(□)×2＋${m}×2</b> と表した。□にあてはまる式は？`,
-  ...c.choices?{choices:c.choices.map(it),ans:c.ans}:c, e:`横 x個のうち、左右のはしの2個はもう数えたので x−2 個`};},
-
-// 11) 碁石・ゴードン式（重複をひく）
-()=>{ const m=pick([4,5,6,7]);
-  const c=mc(`4`,[`2`,`6`,`8`]);
-  return {g:"碁石の問題",q:`碁石を縦 ${m}個、横 ${it("x")}個の長方形に並べる。ゴードンは「横 ${it("x")}個×2列 と 縦 ${m}個×2列 をたすと、四すみを2回数えてしまう」と考えて <b>${it("x")}×2＋${m}×2−□</b> と表した。□にあてはまる数は？`,
-  ...c, e:`四すみの4個を2回数えているので、4をひく`};},
-
-// 12) 碁石・パーシー式（1個ずらし）
-()=>{ const m=pick([4,5,6,7]);
-  const correct=`(x−1)×2＋(${m}−1)×2`;
-  const c=mc(correct,[`(x−2)×2＋(${m}−2)×2`,`x×2＋${m}×2`,`(x＋1)×2＋(${m}＋1)×2`]);
-  return {g:"碁石の問題",q:`碁石を縦 ${m}個、横 ${it("x")}個の長方形に並べる。パーシーは「かどを1個ずつずらして L字型に分ける」考え方で、まわりの碁石の数を表した。パーシーの式はどれ？`,
-  choices:c.choices.map(it),ans:c.ans, e:`L字型（横 x−1個と縦 ${m}−1個）が2組ずつできる`};},
-
-// 13) 碁石・まとめの式
-()=>{ const m=pick([4,5,6,7]);
-  const correct=`2x＋${2*m-4}`;
-  const c=mc(correct,[`2x＋${2*m}`,`2x＋${2*m-2}`,`x＋${2*m-4}`]);
-  return {g:"碁石の問題",q:`碁石を縦 ${m}個、横 ${it("x")}個の長方形に並べたとき、まわりの碁石の数を計算して簡単にした式はどれ？`,
-  choices:c.choices.map(it),ans:c.ans, e:`x×2＋${m}×2−4＝2x＋${2*m-4}（四すみの重なり4個をひく）`};},
-
-// 14) マッチ棒・正三角形の本数（具体数）
-()=>{ const n=pick([4,5,6,8,10,20,50,100,500]);
-  const ansN=2*n+1;
-  const c=mc(`${ansN}本`,[`${3*n}本`,`${2*n}本`,`${2*n+3}本`]);
-  return {g:"マッチ棒の問題",q:`同じ長さのマッチ棒を並べて正三角形を横一列につくっていく。正三角形を ${n}個 つくるのに必要なマッチ棒は何本？`,
-  ...c, e:`最初の1個は3本、2個目からは2本ずつ増える → 3＋(${n}−1)×2＝${ansN}本`};},
-
-// 15) マッチ棒・正三角形の式
-()=>{ const c=mc(`3＋(n−1)×2`,[`3n`,`3＋2n`,`(n−1)×2`]);
-  return {g:"マッチ棒の問題",q:`同じ長さのマッチ棒を並べて正三角形を横一列につくっていく。正三角形を ${it("n")}個 つくるのに必要なマッチ棒の本数を表す式はどれ？`,
-  choices:c.choices.map(it),ans:c.ans, e:`最初の三角形で3本、残りの(n−1)個は2本ずつ → 3＋(n−1)×2（＝2n＋1）`};},
-
-// 16) マッチ棒・正方形
-()=>{ const n=pick([4,5,6,8,10,20,100]);
-  const ansN=3*n+1;
-  const c=mc(`${ansN}本`,[`${4*n}本`,`${3*n}本`,`${3*n+4}本`]);
-  return {g:"マッチ棒の問題",q:`同じ長さのマッチ棒を並べて正方形を横一列につくっていく。正方形を ${n}個 つくるのに必要なマッチ棒は何本？`,
-  ...c, e:`最初の1個は4本、2個目からは3本ずつ増える → 4＋(${n}−1)×3＝${ansN}本`};},
-
-// 17) 式の意味（等式）
-()=>{ const a=pick([10,20,30]),b=pick([50000,60000,70000]);
-  const correct=`ゲーム機1台と駄菓子${a}個を買った代金の合計が ${b}円`;
-  const c=mc(correct,[
-    `ゲーム機${a}台と駄菓子1個を買った代金の合計が ${b}円`,
-    `ゲーム機1台は駄菓子${a}個より ${b}円 高い`,
-    `ゲーム機1台と駄菓子${a}個の代金の差が ${b}円`]);
-  return {g:"式の意味を読む",q:`1台 ${it("x")}円のゲーム機と、1個 ${it("y")}円の駄菓子がある。<b>${it("x")}＋${a}${it("y")}＝${b}</b> はどんな関係を表している？`,
-  ...c, e:`x（ゲーム機1台）＋ ${a}y（駄菓子${a}個）＝ 合計 ${b}円`};},
-
-// 18) 式の意味（不等式）
-()=>{ const a=pick([100,1000,2000,4000]);
-  const correct=`ゲーム機1台の金額は、駄菓子${a}個の金額より安い`;
-  const c=mc(correct,[
-    `ゲーム機1台の金額は、駄菓子${a}個の金額より高い`,
-    `ゲーム機1台と駄菓子${a}個の金額は等しい`,
-    `駄菓子1個の金額は、ゲーム機${a}台の金額より安い`]);
-  return {g:"式の意味を読む",q:`1台 ${it("x")}円のゲーム機と、1個 ${it("y")}円の駄菓子がある。<b>${it("x")}＜${a}${it("y")}</b> はどんな関係を表している？`,
-  ...c, e:`x が ${a}y より小さい ＝ ゲーム機1台のほうが駄菓子${a}個分より安い`};},
-
-// 19) 代金の式
-()=>{ const a=pick([80,100,120,150]),b=pick([50,100,200]);
-  const fruit=pick(["りんご","みかん","もも","ドーナツ"]);
-  const c=mc(`(${a}x＋${b})円`,[`(${a}x−${b})円`,`${a+b}x円`,`(${a}＋${b}x)円`]);
-  return {g:"文字式で表す",q:`1個 ${a}円の${fruit}を ${it("x")}個買って、${b}円の箱に入れてもらったときの代金の合計は？`,
-  ...c, e:`${fruit}代 ${a}x円 ＋ 箱代 ${b}円`};},
-
-// 20) 配って余る
+/* --- 10. 配って余る --- */
 ()=>{ const a=ri(3,8),y=ri(1,9);
-  const c=mc(`(${a}x＋${y})個`,[`(${a}x−${y})個`,`(${a}＋${y})x個`,`${a}(x＋${y})個`]);
-  return {g:"文字式で表す",q:`あめを ${it("x")}人に ${a}個ずつ配ったら、${y}個余った。あめは全部で何個あった？`,
-  ...c, e:`配った分 ${a}x個 ＋ 余り ${y}個`};},
+  return {g:"文字式で表す",
+    q:`あめを ${it("x")}人に ${a}個ずつ配ったら、${y}個 あまった。あめは全部で何個あった？`,
+    ...mc(`(${a}x＋${y})個`,[`(${a}x−${y})個`,`(${a}＋${y})x個`,`${a}(x＋${y})個`]),
+    e:`配った分は ${a}×x＝${a}x 個。それに あまり ${y}個 をたすと全部の数になる。`};},
+
+/* --- 11. 平均（等式） --- */
+()=>{ const a=ri(60,92),b=ri(60,92);
+  let x=ri(60,92); x+=(3-((a+b+x)%3))%3;   /* 平均が整数になるように調整 */
+  const m=(a+b+x)/3;
+  return {g:"文字式で表す",
+    q:`3回のテストの点数が ${a}点、${b}点、${it("x")}点で、平均が ${m}点 だった。この関係を式で表すと？`,
+    ...mc(`(${a}＋${b}＋x)÷3＝${m}`,[`${a}＋${b}＋x＝${m}`,`(${a}＋${b}＋x)×3＝${m}`,`(${a}＋${b})÷3＝${m}`]),
+    e:`平均＝合計÷個数。3回分の合計 (${a}＋${b}＋x) を 3 でわると ${m}`};},
+
+/* --- 12. 長方形のまわりの長さ --- */
+()=>{ const a=ri(3,12),L=ri(20,60);
+  return {g:"文字式で表す",
+    q:`たて ${a}cm、横 ${it("x")}cm の長方形がある。まわりの長さが ${L}cm のとき、この関係を式で表すと？`,
+    ...mc(`(${a}＋x)×2＝${L}`,[`${a}×x＝${L}`,`${a}＋x＝${L}`,`(${a}＋x)÷2＝${L}`]),
+    e:`まわりの長さ＝(たて＋横)×2。だから (${a}＋x)×2＝${L}`};},
+
+/* --- 13. バスの定員（不等式） --- */
+()=>{ const a=pick([25,30,40,45]),b=ri(80,200);
+  return {g:"不等式で表す",
+    q:`${a}人乗りのバス ${it("x")}台に、生徒 ${b}人が全員 乗ることができた。この関係を式で表すと？`,
+    ...mc(`${a}x≧${b}`,[`${a}x≦${b}`,`${a}x＝${b}`,`${a}x＜${b}`]),
+    e:`乗れる人数の合計は ${a}x 人。全員（${b}人）乗れたので、${a}x は ${b} 以上。だから ≧`};},
+
+/* --- 14. お金が足りない（不等式） --- */
+()=>{ const a=pick([120,150,180,250]),money=pick([500,1000,1500]);
+  return {g:"不等式で表す",
+    q:`${money}円 持って買い物に行った。1個 ${a}円のおかしを ${it("x")}個 買おうとしたら、<b>お金が足りなかった</b>。この関係を式で表すと？`,
+    ...mc(`${a}x＞${money}`,[`${a}x＜${money}`,`${a}x＝${money}`,`${a}x≦${money}`]),
+    e:`足りない＝代金 ${a}x 円のほうが 持っていた ${money}円 より高い。だから ${a}x＞${money}`};},
+
+/* --- 15. 碁石・トーマスの考え方 --- */
+()=>{ const m=pick([4,5,6,7]);
+  return {g:"碁石の問題",
+    fig:goishi(m,"thomas")+legend(`${sw(C_RED)}赤：上下の横1列ぜんぶ（${it("x")}個ずつ）`,`${sw(C_BLUE)}青：左右にのこった碁石`),
+    q:`下の図のように、碁石を たて${m}個・横 ${it("x")}個 の長方形の形に、<b>まわりだけ</b>並べる。<br>トーマスは図の赤と青に分けて、碁石の数を <b>${it("x")}×2＋□×2</b> と表した。□に入る数は？`,
+    ...mc(`${m-2}`,[`${m}`,`${m-1}`,`${m+1}`]),
+    e:`青は、たて${m}個から 上下のはしの2個（赤で数えずみ）をのぞくので ${m}−2＝${m-2}個。それが左右に2列。`};},
+
+/* --- 16. 碁石・ヘンリーの考え方 --- */
+()=>{ const m=pick([4,5,6,7]);
+  return {g:"碁石の問題",
+    fig:goishi(m,"henry")+legend(`${sw(C_BLUE)}青：左右のたて1列ぜんぶ（${m}個ずつ）`,`${sw(C_RED)}赤：上下にのこった碁石`),
+    q:`下の図のように、碁石を たて${m}個・横 ${it("x")}個 の長方形の形に、<b>まわりだけ</b>並べる。<br>ヘンリーは図の青と赤に分けて、碁石の数を <b>(□)×2＋${m}×2</b> と表した。□に入る式は？`,
+    ...mc(`x−2`,[`x−1`,`x`,`x＋2`]),
+    e:`赤は、横 x個から 左右のはしの2個（青で数えずみ）をのぞくので x−2 個。それが上下に2列。`};},
+
+/* --- 17. 碁石・ゴードンの考え方 --- */
+()=>{ const m=pick([4,5,6,7]);
+  return {g:"碁石の問題",
+    fig:goishi(m,"gordon")+legend(`${sw(C_RED)}赤＋${sw(C_PUR)}むらさき ＝ 横1列（${it("x")}個）が2つ`,`${sw(C_BLUE)}青＋${sw(C_PUR)}むらさき ＝ たて1列（${m}個）が2つ`,`${sw(C_PUR)}むらさきの四すみは <b>2回</b> 数えてしまう`),
+    q:`下の図のように、碁石を たて${m}個・横 ${it("x")}個 の長方形の形に、<b>まわりだけ</b>並べる。<br>ゴードンは「横の列と たての列 をそのままたすと、四すみを2回 数えてしまう」と考えて <b>${it("x")}×2＋${m}×2−□</b> と表した。□に入る数は？`,
+    ...mc(`4`,[`2`,`6`,`8`]),
+    e:`四すみの4個を2回ずつ数えているので、多く数えた分の 4個 をひく。`};},
+
+/* --- 18. 碁石・パーシーの考え方 --- */
+()=>{ const m=pick([4,5,6,7]);
+  return {g:"碁石の問題",
+    fig:goishi(m,"percy")+legend(`${sw(C_RED)}赤：横向きのまとまり（2つ）　${sw(C_BLUE)}青：たて向きのまとまり（2つ）`,`かどを1個ずつずらして、同じ形を4つに分けている`),
+    q:`下の図のように、碁石を たて${m}個・横 ${it("x")}個 の長方形の形に、<b>まわりだけ</b>並べる。<br>パーシーは かどを1個ずつずらして 4つのまとまりに分け、碁石の数を <b>(□)×2＋(${m}−1)×2</b> と表した。□に入る式は？`,
+    ...mc(`x−1`,[`x−2`,`x`,`x＋1`]),
+    e:`赤の横向きのまとまりは、かどを1個ずらすので 横 x個から1個へった x−1 個。それが2つ。`};},
+
+/* --- 19. 碁石・式を簡単にする --- */
+()=>{ const m=pick([4,5,6,7]);
+  return {g:"碁石の問題",
+    fig:goishi(m,"plain")+legend(`たて${m}個・横 ${it("x")}個の長方形のまわりだけ並べたところ`),
+    q:`たて${m}個・横 ${it("x")}個 の長方形の形に、まわりだけ碁石を並べた。<br>碁石の数を計算して、いちばん簡単にした式はどれ？`,
+    ...mc(`2x＋${2*m-4}`,[`2x＋${2*m}`,`2x＋${2*m-2}`,`x＋${2*m-4}`]),
+    e:`x×2＋${m}×2−4 ＝ 2x＋${2*m}−4 ＝ 2x＋${2*m-4}（四すみの重なり4個をひく）`};},
+
+/* --- 20. 碁石・実際の個数 --- */
+()=>{ const m=pick([4,5,6]),k=pick([8,10,12,15,20]);
+  const t=2*k+2*m-4;
+  return {g:"碁石の問題",
+    fig:goishi(m,"plain")+legend(`たて${m}個・横 ${k}個の長方形のまわりだけ並べたところ`),
+    q:`たて${m}個・横 ${k}個 の長方形の形に、まわりだけ碁石を並べた。碁石は全部で何個？`,
+    ...mc(`${t}個`,[`${m*k}個`,`${2*k+2*m}個`,`${t-2}個`]),
+    e:`2×${k}＋2×${m}−4 ＝ ${2*k}＋${2*m}−4 ＝ ${t}個（四すみを2回 数えた分をひく）`};},
+
+/* --- 21. マッチ棒・正三角形の本数 --- */
+()=>{ const n=pick([4,5,6,8,10,20,50,100,500]),t=2*n+1;
+  return {g:"マッチ棒の問題",
+    fig:FIG_TRI+TRI_LEG,
+    q:`下の図のように、同じ長さのマッチ棒を並べて 正三角形を横一列に作っていく。<br>正三角形を <b>${n}個</b> 作るのに必要なマッチ棒は何本？`,
+    ...mc(`${t}本`,[`${3*n}本`,`${2*n}本`,`${2*n+3}本`]),
+    e:`はじめの1個で3本。そのあとは1個ふえるごとに2本ずつ。3＋(${n}−1)×2＝${t}本`};},
+
+/* --- 22. マッチ棒・式で表す --- */
+()=>{ const sq=Math.random()<0.5, v=pick(["n","a","x"]);
+  const first=sq?4:3, step=sq?3:2, name=sq?"正方形":"正三角形";
+  return {g:"マッチ棒の問題",
+    fig:(sq?FIG_SQ+SQ_LEG:FIG_TRI+TRI_LEG),
+    q:`下の図のように、同じ長さのマッチ棒を並べて ${name}を横一列に作っていく。<br>${name}を ${it(v)}個 作るのに必要なマッチ棒の本数を表す式はどれ？`,
+    ...mc(`${first}＋(${v}−1)×${step}`,[`${first}${v}`,`${first}＋${step}${v}`,`(${v}−1)×${step}`]),
+    e:`はじめの1個で${first}本、のこりの (${v}−1)個 は ${step}本ずつ。だから ${first}＋(${v}−1)×${step}`};},
+
+/* --- 23. マッチ棒・正方形の本数 --- */
+()=>{ const n=pick([4,5,6,8,10,20,100]),t=3*n+1;
+  return {g:"マッチ棒の問題",
+    fig:FIG_SQ+SQ_LEG,
+    q:`下の図のように、同じ長さのマッチ棒を並べて 正方形を横一列に作っていく。<br>正方形を <b>${n}個</b> 作るのに必要なマッチ棒は何本？`,
+    ...mc(`${t}本`,[`${4*n}本`,`${3*n}本`,`${3*n+3}本`]),
+    e:`はじめの1個で4本。そのあとは1個ふえるごとに3本ずつ。4＋(${n}−1)×3＝${t}本`};},
+
+/* --- 24. マッチ棒・本数から個数を求める --- */
+()=>{ const n=pick([5,7,10,15,20,25]),t=2*n+1;
+  return {g:"マッチ棒の問題",
+    fig:FIG_TRI+TRI_LEG,
+    q:`下の図のように、同じ長さのマッチ棒を並べて 正三角形を横一列に作っていく。<br>マッチ棒を <b>${t}本</b> 使うと、正三角形は何個できる？`,
+    ...mc(`${n}個`,[`${n+1}個`,`${n-1}個`,`${Math.floor(t/3)}個`]),
+    e:`本数は 2×(個数)＋1。${t}本 なら 2×□＋1＝${t} → □＝(${t}−1)÷2＝${n}個`};},
+
+/* --- 25. 式の意味を読む（等式） --- */
+()=>{ const a=pick([10,20,30]),b=pick([50000,60000,70000]);
+  return {g:"式の意味を読む",
+    q:`1台 ${it("x")}円のゲーム機と、1個 ${it("y")}円の駄菓子がある。<br><b>${it("x")}＋${a}${it("y")}＝${b}</b> は、どんな関係を表している？`,
+    ...mc(`ゲーム機1台と駄菓子${a}個を買った代金の合計が ${b}円`,
+      [`ゲーム機${a}台と駄菓子1個を買った代金の合計が ${b}円`,
+       `ゲーム機1台は駄菓子${a}個より ${b}円 高い`,
+       `ゲーム機1台と駄菓子${a}個の代金の差が ${b}円`]),
+    e:`x はゲーム機1台の代金、${a}y は駄菓子${a}個の代金。それをたして ${b}円 という意味。`};},
+
+/* --- 26. 式の意味を読む（不等式） --- */
+()=>{ const a=pick([100,1000,2000,4000]);
+  return {g:"式の意味を読む",
+    q:`1台 ${it("x")}円のゲーム機と、1個 ${it("y")}円の駄菓子がある。<br><b>${it("x")}＜${a}${it("y")}</b> は、どんな関係を表している？`,
+    ...mc(`ゲーム機1台のねだんは、駄菓子${a}個分のねだんより安い`,
+      [`ゲーム機1台のねだんは、駄菓子${a}個分のねだんより高い`,
+       `ゲーム機1台と駄菓子${a}個分のねだんは等しい`,
+       `ゲーム機1台のねだんは ${a}円 より安い`]),
+    e:`${a}y は「駄菓子${a}個分の代金」。x＜${a}y なので、ゲーム機のほうが安いという意味。`};},
 ];
 
 /* ============ クイズ本体 ============ */
-let queue=[], total=0, correctCount=0, firstTry=0, missCount=0, answeredFirst=new Set(), current=null, locked=false;
+let queue=[],total=0,cleared=0,firstTry=0,missCount=0,current=null,locked=false;
 
 function buildQuestions(n){
-  const qs=[]; const seen=new Set();
-  let i=0, guard=0;
-  while(qs.length<n && guard<n*30){
-    guard++;
-    const gen=GEN[i%GEN.length]; i++;
-    const q=gen();
-    if(seen.has(q.q)) continue;
-    seen.add(q.q);
-    q.id=qs.length; q.tried=false;
-    qs.push(q);
+  const qs=[],seen=new Set();
+  for(let k=0;k<n;k++){
+    const gen=GEN[k%GEN.length];
+    let q=gen();
+    for(let t=0;t<15 && seen.has(q.q);t++) q=gen();
+    seen.add(q.q); q.tried=false; qs.push(q);
   }
   return shuffle(qs);
 }
 
 function startQuiz(n){
   queue=buildQuestions(n);
-  total=n; correctCount=0; firstTry=0; missCount=0;
-  document.getElementById("scoreMax").textContent=n===100?100:n;
+  total=n; cleared=0; firstTry=0; missCount=0;
+  document.getElementById("scoreMax").textContent=n;
   document.getElementById("modeLabel").textContent=n===100?"100問 本番モード":`${n}問モード`;
   showScreen("quizScreen");
   nextQuestion();
@@ -458,10 +534,9 @@ function showScreen(id){
 }
 
 function updateHUD(){
-  const pt=total===100?correctCount:correctCount;
-  document.getElementById("scoreNow").textContent=pt;
-  document.getElementById("remainCount").textContent=queue.length+(current?1:0)-(current&&current.done?1:0);
-  document.getElementById("progressBar").style.width=(correctCount/total*100)+"%";
+  document.getElementById("scoreNow").textContent=cleared;
+  document.getElementById("remainCount").textContent=queue.length+(locked?0:1);
+  document.getElementById("progressBar").style.width=(cleared/total*100)+"%";
 }
 
 function nextQuestion(){
@@ -471,53 +546,51 @@ function nextQuestion(){
   current=queue.shift(); locked=false;
   document.getElementById("qGenre").textContent=current.g;
   document.getElementById("qText").innerHTML=current.q;
+  document.getElementById("qFig").innerHTML=current.fig||"";
   const box=document.getElementById("choices"); box.innerHTML="";
-  current.choices.forEach((c,idx)=>{
+  current.choices.forEach((c,i)=>{
     const b=document.createElement("button");
     b.className="choice-btn";
-    b.innerHTML=(["ア","イ","ウ","エ"][idx])+"．"+c;
-    b.onclick=()=>answer(idx,b);
+    b.innerHTML=["ア","イ","ウ","エ"][i]+"．"+it(c);
+    b.onclick=()=>answer(i,b);
     box.appendChild(b);
   });
   updateHUD();
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 
-function answer(idx,btn){
+function answer(i,btn){
   if(locked) return; locked=true;
   const btns=document.querySelectorAll(".choice-btn");
   btns.forEach(b=>b.disabled=true);
   const fb=document.getElementById("feedback");
-  const firstAttempt=!current.tried;
+  const first=!current.tried;
   current.tried=true;
-  if(idx===current.ans){
+  if(i===current.ans){
     btn.classList.add("correct");
-    correctCount++;
-    if(firstAttempt) firstTry++;
+    cleared++;
+    if(first) firstTry++;
     fb.className="feedback show good";
-    fb.innerHTML="⭕ <b>正解！</b>ナイスシュート！🕸️ "+ (current.e?("<br>"+current.e):"");
+    fb.innerHTML="⭕ <b>正解！</b>ナイスシュート！🕸️<br>"+it(current.e||"");
     spiderPop(btn);
   }else{
     btn.classList.add("wrong");
     btns[current.ans].classList.add("correct");
     missCount++;
     fb.className="feedback show bad";
-    fb.innerHTML="❌ <b>ざんねん！</b> 正解は「"+current.choices[current.ans]+"」<br>"+(current.e||"")+"<br><b>この問題は、あとでもう一度出るぞ！</b>";
-    // あとで再出題（3〜6問後、またはキューの最後）
-    const pos=Math.min(queue.length, ri(3,6));
-    const clone={...current};
-    queue.splice(pos,0,clone);
+    fb.innerHTML="❌ <b>ざんねん！</b>正解は「"+it(current.choices[current.ans])+"」<br>"
+      +it(current.e||"")+"<br><b>この問題は、あとでもう一度 出るぞ！</b>";
+    queue.splice(Math.min(queue.length,ri(3,6)),0,Object.assign({},current));
   }
   updateHUD();
   document.getElementById("nextBtn").className="next-btn show";
 }
 
 function finish(){
-  const score=total===100?100:total;
-  document.getElementById("finalScore").textContent=score;
+  document.getElementById("finalScore").textContent=total===100?100:total;
   document.getElementById("statFirst").textContent=firstTry+" / "+total;
   document.getElementById("statMiss").textContent=missCount;
-  const key="spider_best_miss_"+total;
-  const prev=localStorage.getItem(key);
+  const key="spider_best_miss_"+total,prev=localStorage.getItem(key);
   if(prev===null||missCount<Number(prev)) localStorage.setItem(key,missCount);
   document.getElementById("statBest").textContent=localStorage.getItem(key)+"回";
   document.getElementById("resultMsg").textContent=
@@ -528,8 +601,7 @@ function finish(){
 
 /* ============ 演出 ============ */
 function spiderPop(el){
-  const r=el.getBoundingClientRect();
-  const s=document.createElement("div");
+  const r=el.getBoundingClientRect(),s=document.createElement("div");
   s.className="spider-pop"; s.textContent=pick(["🕷️","🕸️","💥","⭐"]);
   s.style.left=(r.left+r.width/2)+"px"; s.style.top=r.top+"px";
   document.body.appendChild(s);
@@ -537,23 +609,17 @@ function spiderPop(el){
 }
 
 function webShooterShow(){
-  const layer=document.getElementById("webLayer");
-  layer.innerHTML="";
+  const layer=document.getElementById("webLayer"); layer.innerHTML="";
   const W=window.innerWidth,H=window.innerHeight;
   const origins=[{x:0,y:H},{x:W,y:H},{x:W/2,y:H}];
   let count=0;
   const timer=setInterval(()=>{
-    count++;
-    if(count>26){clearInterval(timer);return;}
-    const o=pick(origins);
-    const tx=ri(0,W), ty=ri(0,Math.floor(H*0.7));
-    const dx=tx-o.x, dy=ty-o.y;
-    const len=Math.sqrt(dx*dx+dy*dy);
-    const ang=Math.atan2(dy,dx)*180/Math.PI;
+    if(++count>26){clearInterval(timer);return;}
+    const o=pick(origins),tx=ri(0,W),ty=ri(0,Math.floor(H*0.7));
+    const dx=tx-o.x,dy=ty-o.y,len=Math.sqrt(dx*dx+dy*dy),ang=Math.atan2(dy,dx)*180/Math.PI;
     const line=document.createElement("div");
     line.className="web-line";
-    line.style.left=o.x+"px"; line.style.top=o.y+"px";
-    line.style.width=len+"px";
+    line.style.left=o.x+"px"; line.style.top=o.y+"px"; line.style.width=len+"px";
     line.style.setProperty("--ang",ang+"deg");
     layer.appendChild(line);
     const burst=document.createElement("div");
